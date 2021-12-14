@@ -1,16 +1,19 @@
 {
-  "name": "Ugly",
+  "name": "ugly",
   "description": "basic demo for WebChimera.js",
   "version": "0.2.0",
   "private": true,
-  "main": "index.html",
+  "main": "electron_main.js",
   "dependencies": {
-    "webchimera.js": "*",
-    "webgl-video-renderer": ">=0.2.0"
+    "electron": "^12",
+    "webchimera.js": "^0.5.2"
   },
   "cmake-js": {
-    "runtime": "nw",
-    "runtimeVersion": "0.16.0"
+    "runtime": "electron",
+    "runtimeVersion": "12"
   },
-  "env": "development"
+  "env": "development",
+  "scripts": {
+    "start": "electron ."
+  }
 }
