@@ -1,8 +1,8 @@
-const { contextBridge } = require("electron");
+const electron = require("electron");
 const WebChimera = require("webchimera.js");
 
 let wc;
-contextBridge.exposeInMainWorld("Preload", {
+electron.contextBridge.exposeInMainWorld("Preload", {
   webchimera: (args) => {
     wc = WebChimera.createPlayer(args);
   },
@@ -15,5 +15,8 @@ contextBridge.exposeInMainWorld("Preload", {
   },
   play: (url) => {
     wc.play(url);
+  },
+  check() {
+    return Object.keys(electron);
   },
 });
